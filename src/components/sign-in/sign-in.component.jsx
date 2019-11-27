@@ -11,7 +11,7 @@ const SignIn = () => {
   });
 
   const handleChange = event => {
-    setState({ [event.target.name]: event.target.value });
+    setState({ ...state, [event.target.name]: event.target.value });
   };
 
   const handleSubmit = event => {
