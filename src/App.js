@@ -32,6 +32,7 @@ const App = ({ checkUserSession, currentUser }) => {
           }
         />
       </Switch>
+      <p>id: {process.env.REACT_APP_FIREBASE_PROJECT_ID}</p>
     </div>
   );
 };
