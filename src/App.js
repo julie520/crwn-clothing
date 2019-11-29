@@ -14,6 +14,8 @@ import { checkUserSession } from './redux/user/user.actions';
 
 const App = ({ checkUserSession, currentUser }) => {
   useEffect(() => {
+    console.log('ID', process.env.REACT_APP_FIREBASE_PROJECT_ID);
+    console.log('PROJECT_ID', process.env.FIREBASE_PROJECT_ID);
     checkUserSession();
   }, [checkUserSession]);
 
@@ -32,7 +34,6 @@ const App = ({ checkUserSession, currentUser }) => {
           }
         />
       </Switch>
-      <p>id: {process.env.REACT_APP_FIREBASE_PROJECT_ID}</p>
     </div>
   );
 };
