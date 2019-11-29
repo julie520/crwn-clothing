@@ -13,6 +13,8 @@ const SignUp = ({ signUpStart }) => {
     confirmPassword: ''
   });
 
+  const { displayName, email, password, confirmPassword } = state;
+
   const handleChange = event => {
     setState({ ...state, [event.target.name]: event.target.value });
   };
@@ -27,8 +29,6 @@ const SignUp = ({ signUpStart }) => {
 
     signUpStart(state);
   };
-
-  const { displayName, email, password, confirmPassword } = state;
 
   return (
     <div className='sign-up'>

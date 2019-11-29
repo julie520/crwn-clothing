@@ -9,22 +9,24 @@ import {
 import './sign-in.styles.scss';
 
 const SignIn = ({ googleSignInStart, emailSignInStart }) => {
-  const [state, setState] = useState({
+  const [userCredentials, setCredentials] = useState({
     email: '',
     password: ''
   });
 
+  const { email, password } = userCredentials;
+
   const handleChange = event => {
-    setState({ ...state, [event.target.name]: event.target.value });
+    setCredentials({
+      ...userCredentials,
+      [event.target.name]: event.target.value
+    });
   };
 
   const handleSubmit = async event => {
     event.preventDefault();
-    const { email, password } = state;
     emailSignInStart(email, password);
   };
-
-  const { email, password } = state;
 
   return (
     <div className='sign-in'>
