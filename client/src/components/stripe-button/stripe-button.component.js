@@ -6,7 +6,7 @@ const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
   const onToken = token => {
     axios({
-      url: '/api/payment',
+      url: `${process.env.REACT_APP_SERVER_URL}/payment`,
       method: 'post',
       data: {
         amount: priceForStripe,
