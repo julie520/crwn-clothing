@@ -34,8 +34,6 @@ app.post('/api/payment', (req, res) => {
     currency: 'aud'
   };
 
-  console.log('REQ.BODY', req.body);
-
   stripe.charges.create(body, (stripeErr, stripeRes) => {
     if (stripeErr) {
       res.status(500).send({ error: stripeErr });

@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import { addItem } from '../../redux/cart/cart.actions';
-import './collection-item.styles.scss';
+
 import {
   CollectionItemContainer,
   CollectionFooterContainer,
@@ -13,6 +14,7 @@ import {
 
 const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
+
   return (
     <CollectionItemContainer>
       <BackgroundImage className='image' imageUrl={imageUrl} />
