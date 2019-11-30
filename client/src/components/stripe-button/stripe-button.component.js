@@ -4,9 +4,12 @@ import axios from 'axios';
 
 const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
+  const url = 'payment';
+  if (process.env.NODE_ENV !== 'production')
+    url = `${process.env.REACT_APP_SERVER_URL}/payment`;
   const onToken = token => {
     axios({
-      url: `${process.env.REACT_APP_SERVER_URL}/payment`,
+      url,
       method: 'post',
       data: {
         amount: priceForStripe,
